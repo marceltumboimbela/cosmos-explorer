@@ -159,7 +159,7 @@ function App() {
           </div>
         )}
         <div className='p-4 grow'>
-          {block && block.header && (
+          {block && (
             <div className='flex mb-4 sticky top-0'>
               <div className='p-4 rounded-lg grow bg-gray-700'>
                 <div className='flex gap-4 items-center'>

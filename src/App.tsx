@@ -9,6 +9,7 @@ import { Transactions } from './Transactions';
 import { Proposals } from './Proposals';
 import { Validators } from './Validators';
 import { formatTime } from './Utils';
+import { DecodedTxRaw } from '@cosmjs/proto-signing'
 
 export type Block = {
   header: {
@@ -25,7 +26,7 @@ export type Block = {
 export type Transaction = {
   height: number;
   hash: string;
-  tx: any;
+  tx: DecodedTxRaw;
 }
 
 export type Validator = {
@@ -38,6 +39,10 @@ export type Validator = {
     commission_rates: {
       rate: number;
     }
+  };
+  consensus_pubkey: {
+    '@type': string;
+    key: string;
   }
 }
 
@@ -46,6 +51,11 @@ export type Proposal = {
   title: string;
   status: string;
   voting_end_time: string;
+  messages: Array<{
+    content: {
+      '@type': string;
+    }
+  }>
 }
 
 const Menu = () => {

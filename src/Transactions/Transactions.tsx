@@ -13,7 +13,7 @@ const Transactions: FC<TransactionsProps> = ({ blocks }) => {
     const txs: Array<Transaction> = []
     if(blocks.length > 0) {
       blocks.forEach(b => 
-        b.data.txs.map((tx, index) => {
+        b.data.txs.map((tx) => {
           txs.push({
             height: b.header.height,
             hash: hashTx(tx),

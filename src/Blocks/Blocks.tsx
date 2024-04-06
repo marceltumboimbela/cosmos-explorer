@@ -1,9 +1,14 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import type { Block, Validator } from '../App';
 import { formatTimestamp, formatValidator } from '../Utils';
 
 type BlocksProps = {
   blocks: Array<Block>
+  validators: Array<Validator>
+}
+
+type BlockProps = {
+  block: Block
   validators: Array<Validator>
 }
 
@@ -18,7 +23,7 @@ const Blocks: FC<BlocksProps> = ({ blocks, validators }) => {
 }
 export default Blocks;
 
-const Block = ({ block, validators }) => {
+const Block: FC<BlockProps> = ({ block, validators }) => {
   return (
     <div className='rounded-md bg-gray-700 p-3'>
       <div className='flex justify-between'>

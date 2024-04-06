@@ -3,7 +3,7 @@ import updateLocale from 'dayjs/plugin/updateLocale';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { fromBase64, toHex } from '@cosmjs/encoding';
 import { Ripemd160, sha256 } from '@cosmjs/crypto';
-import numeral from 'numeral';
+import type { Validator } from '../App';
 
 dayjs.extend(relativeTime);
 dayjs.extend(updateLocale)

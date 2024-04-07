@@ -6,7 +6,14 @@ type ProposalsProps = {
   proposals: Array<Proposal>;
 }
 
-function formatProposal(name: string) {
+function formatProposal(proposal: Proposal) {
+  let name = null
+  if (proposal.messages[0].content !== undefined) {
+    name = proposal.messages[0].content['@type'];
+  } else {
+    name = proposal.messages[0]['@type'];
+  }
+
   if (name) {
     return name.substring(name.lastIndexOf('.') + 1);
   }
@@ -26,7 +33,7 @@ enum stat {
 const Proposals: FC<ProposalsProps> = ({ proposals }) => {
 
   const [status, setStatus] = useState(stat.VOTING);
-
+  
   return (
     <>
       <div className="flex gap-2 mb-4">
@@ -47,7 +54,7 @@ const Proposals: FC<ProposalsProps> = ({ proposals }) => {
             <div className="col-span-2 lg:col-span-3">
               <p>{proposal.title}</p>
               <div className="flex">
-                <p className="text-xs rounded-full border-2 border-gray-500 p-1">{formatProposal(proposal.messages[0].content['@type'])}</p>
+                <p className="text-xs rounded-full border-2 border-gray-500 p-1">{formatProposal(proposal)}</p>
               </div>
             </div>
             <p>{formatStatus(proposal.status)}</p>

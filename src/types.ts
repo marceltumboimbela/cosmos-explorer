@@ -43,6 +43,7 @@ export type Proposal = {
   messages: Array<{
     content: {
       '@type': string;
-    }
+    },
+    '@type': string;
   }>
 }

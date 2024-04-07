@@ -1,8 +1,8 @@
 import { FC, useMemo, Fragment } from 'react';
 import { fromBase64 } from '@cosmjs/encoding';
 import { decodeTxRaw } from '@cosmjs/proto-signing';
-import { hashTx, formatMessage, formatTokens } from '../Utils';
-import type { Block, Transaction } from '../App';
+import { hashTx, formatMessage, formatTokens } from '../../Utils';
+import type { Block, Transaction } from '../../types';
 
 type TransactionsProps = {
   blocks: Array<Block>;
@@ -27,10 +27,10 @@ const Transactions: FC<TransactionsProps> = ({ blocks }) => {
 
   return (
     <div className='grid grid-cols-4 lg:grid-cols-8 gap-4 text-sm'>
-      <p className='font-bold'>Height</p>
-      <p className='font-bold hidden lg:block lg:col-span-4'>Hash</p>
-      <p className='font-bold col-span-2'>Messages</p>
-      <p className='font-bold'>Fees</p>
+      <p className='text-base font-bold'>Height</p>
+      <p className='text-base font-bold hidden lg:block lg:col-span-4'>Hash</p>
+      <p className='text-base font-bold col-span-2'>Messages</p>
+      <p className='text-base font-bold'>Fees</p>
 
       {transactions.map((item, index) => (
         <Fragment key={index}>

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import type { Block, Validator } from '../App';
-import { formatTimestamp, formatValidator } from '../Utils';
+import type { Block, Validator } from '../../types';
+import { formatTimestamp, formatValidator } from '../../Utils';
 
 type BlocksProps = {
   blocks: Array<Block>

@@ -1,6 +1,6 @@
 import { FC, useState, Fragment } from "react";
-import type { Proposal } from "../App";
-import { formatTime } from "../Utils";
+import type { Proposal } from "../../types";
+import { formatTime } from "../../Utils";
 
 type ProposalsProps = {
   proposals: Array<Proposal>;
@@ -30,9 +30,9 @@ const Proposals: FC<ProposalsProps> = ({ proposals }) => {
   return (
     <>
       <div className="flex gap-2 mb-4">
-        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.VOTING ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.VOTING)}>Voting</button>
-        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.PASSED ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.PASSED)}>Passed</button>
-        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.REJECTED ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.REJECTED)}>Rejected</button>
+        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.VOTING ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.VOTING)}>VOTING</button>
+        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.PASSED ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.PASSED)}>PASSED</button>
+        <button className={`px-2 py-1 border-2 border-gray-500 rounded ${status === stat.REJECTED ? 'bg-blue-500 text-white' : ''}`} onClick={() => setStatus(stat.REJECTED)}>REJECTED</button>
       </div>
 
       <div className='grid grid-cols-3 lg:grid-cols-6 gap-2 text-sm'>

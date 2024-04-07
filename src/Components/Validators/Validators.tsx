@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
-import type { Validator } from "../App";
-import { formatNumber, formatPercentage, formatValidatorStatus } from "../Utils";
+import type { Validator } from "../../types";
+import { formatNumber, formatPercentage, formatValidatorStatus } from "../../Utils";
 
 type ValidatorsProps = {
   validators: Array<Validator>;
